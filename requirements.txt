@@ -1,0 +1,4 @@
+uvicorn==1.26.13
+torch==2.0.0
+opencv-python==4.2.0.34
+matplotlib==2.2.0
