@@ -11,6 +11,8 @@ class Rozpoznawanie:
     def stream(self):
         while True:
             success, image = self.cam.read()
+            if not success:
+                raise Exception("Cannot read frame!")
             ret, jpeg = cv2.imencode('.jpg', image)
             bytes_img = jpeg.tobytes()
             yield (b'--frame\r\n'
